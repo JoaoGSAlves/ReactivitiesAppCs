@@ -1,3 +1,4 @@
+using Application.Activities;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -20,6 +21,7 @@ builder.Services.AddCors(opt =>
         policy.AllowAnyHeader().AllowAnyOrigin().WithOrigins("http://localhost:3000");
     });
 });
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(List.Handler)));
 
 var app = builder.Build();
 
