@@ -19,7 +19,7 @@ public static class ApplicationServiceExtension
         {
             opt.AddPolicy("CorsPolicy", policy =>
             {
-                policy.AllowAnyHeader().AllowAnyOrigin().WithOrigins("http://localhost:3000");
+                policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
             });
         });
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(List.Handler)));
