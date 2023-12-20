@@ -1,7 +1,8 @@
 import { Button, Card, Image } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
+import { observer } from 'mobx-react-lite';
 
-export default function ActivityDetails() {
+export default observer(function ActivityDetails() {
 	const { activityStore } = useStore();
 	const { selectedActivity: activity, cancelSelectedActivity } = activityStore;
 
@@ -25,4 +26,4 @@ export default function ActivityDetails() {
 			</Card.Content>
 		</Card>
 	);
-}
+});
